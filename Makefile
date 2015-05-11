@@ -1,10 +1,10 @@
 # Makfile for CCL
 
-NVCC = nvcc
+NVCC = /usr/local/cuda/bin/nvcc
 CC = g++
 
 #FLAGS += -arch sm_13  		# Newest Architecture
-FLAGS += -arch sm_20  		# Newest Architecture
+FLAGS += -arch sm_30  		# Newest Architecture
 #FLAGS += -keep			# Keep intermediate files
 #FLAGS += --ptxas-options="-v"	# Show register usage and ptx verbose compilation
 FLAGS += -O3
@@ -15,11 +15,11 @@ FLAGS += -O3
 #FLAGS += -I.			
 FLAGS += -prec-div=false	# Division is approximate
 FLAGS += -prec-sqrt=false	# Square root is approximate
-FLAGS += -lcutil_x86_64		# CUDA Utilities library
+FLAGS += -lcudart		# CUDA Utilities library
 FLAGS += --use_fast_math
 
-FLAGS += -L ~/NVIDIA_GPU_Computing_SDK/C/lib
-FLAGS += -I ~/NVIDIA_GPU_Computing_SDK/C/common/inc 
+FLAGS += -L /usr/local/cuda/lib64
+FLAGS += -I /usr/local/cuda/include
 FLAGS += -Xcompiler -Wall -w
 
 #FLAGS += --maxrregcount 28

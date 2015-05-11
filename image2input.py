@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 
-import sys, os, re, Image
+import sys, os, re
+from PIL import Image
 
 def main(args):
 	if len(args) < 3:
 		print >>sys.stderr, "Usage: %s input_image output_text degree_of_connectivity=4 threashold=0" % os.path.basename(args[0])
 		sys.exit(1)
 
-	im = Image.open(args[1])
+        im = Image.open(args[1])
 	f = file(args[2], "w")
 	deg = 4
 	th = 0

@@ -17,7 +17,7 @@
 #include <cmath>
 #include <limits>
 
-#include <cutil_inline.h>
+#include <cuda_runtime.h>
 
 #define NOMINMAX
 
@@ -201,7 +201,7 @@ int main(int argc, char* argv[])
 		exit(1);
 	}
 
-	cudaSetDevice(cutGetMaxGflopsDeviceId());
+	//cudaSetDevice(cutGetMaxGflopsDeviceId());
 
 	vector<int> image;
 	int W, degree_of_connectivity, threshold;
